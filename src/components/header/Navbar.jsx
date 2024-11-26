@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -27,7 +28,13 @@ const Navbar = () => {
     <header className='bg-[#F5F3FF] shadow-md'>
       <nav className='max-w-7xl mx-auto px-4 py-4 flex items-center justify-between'>
         <Link href={"/"} className='flex items-center'>
-          <img src='/assets/logo.png' alt='We5ive Logo' className='' />
+          <Image
+            width={90}
+            height={90}
+            src='/assets/logo.png'
+            alt='We5ive Logo'
+            className=''
+          />
           <p className='ml-2 text-xl font-bold text-gray-800'>
             We<span className='text-purple-600'>5</span>ive
           </p>
@@ -39,7 +46,7 @@ const Navbar = () => {
           </NavItem>
           <NavItem href='/'>Shop</NavItem>
           <NavItem href='/'>Deals</NavItem>
-          <NavItem href='/'>What's New</NavItem>
+          <NavItem href='/'>What&apos;s New</NavItem>
         </ul>
 
         <div className='flex items-center'>

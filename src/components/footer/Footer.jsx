@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 
 export default function Footer() {
@@ -18,7 +19,12 @@ export default function Footer() {
           {/* Logo */}
           <div className='flex flex-wrap justify-between'>
             <div className='flex items-center w-full md:w-1/4 mb-6 md:mb-0'>
-              <img src='/assets/footer-logo.png' alt='We5ive Logo' />
+              <Image
+                width={90}
+                height={90}
+                src='/assets/footer-logo.png'
+                alt='We5ive Logo'
+              />
               <p className='ml-2 text-xl font-bold'>
                 We<span className='text-purple-600'>5</span>ive
               </p>
