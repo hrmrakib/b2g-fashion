@@ -1,9 +1,9 @@
 "use client";
 
+import { newArrivals } from "@/constants";
 import { useState } from "react";
-import { newArrivals } from "../constants";
 
-export default function FeaturedProducts() {
+const FeaturedProduct = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -109,4 +109,5 @@ export default function FeaturedProducts() {
       </div>
     </section>
   );
-}
+};
+export default FeaturedProduct;
