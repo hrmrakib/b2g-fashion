@@ -1,3 +1,5 @@
+"use client";
+
 const PromotionalBanner = () => {
   return (
     <section className='bg-[#F8F5FF] py-12 px-4 md:px-8'>

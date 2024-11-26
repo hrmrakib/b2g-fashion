@@ -1,3 +1,4 @@
+import CollectionBanner from "@/components/home/CollectionBanner";
 import FeaturedProduct from "@/components/home/FeaturedProduct";
 import Hero from "@/components/home/Hero";
 import PromotionalBanner from "@/components/home/PromotionalBanner";
@@ -9,6 +10,7 @@ const page = () => {
       <Hero />
       <FeaturedProduct />
       <PromotionalBanner />
+      <CollectionBanner />
     </div>
   );
 };

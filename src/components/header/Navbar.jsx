@@ -48,10 +48,10 @@ const Navbar = () => {
                 height={"20"}
                 fill='none'
                 stroke='currentColor'
-                stroke-width='1'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                class='feather feather-search'
+                strokeWidth='1'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='feather feather-search'
               >
                 <circle cx='11' cy='11' r='8'></circle>
                 <line x1='21' y1='21' x2='16.65' y2='16.65'></line>
