@@ -139,7 +139,7 @@ const Navbar = () => {
             <NavItem>Home</NavItem>
             <NavItem>Shop</NavItem>
             <NavItem>Deals</NavItem>
-            <NavItem>What's New</NavItem>
+            <NavItem>What&apos;s New</NavItem>
           </ul>
           <input
             type='text'
