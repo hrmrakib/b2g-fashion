@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { products } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function BigDealSection() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -30,8 +32,8 @@ export default function BigDealSection() {
   };
 
   return (
-    <section className='py-12 px-4 md:px-8 bg-[#F8F5FF]'>
-      <div className='max-w-7xl mx-auto'>
+    <section className='py-12 px-4 md:px-8'>
+      <div className='max-w-7xl mx-auto bg-[#EEECFB]'>
         <div className='flex justify-between items-center mb-8'>
           <div>
             <p className='text-purple-600 text-sm font-medium mb-2'>SUMMER</p>
@@ -81,12 +83,15 @@ export default function BigDealSection() {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {products.map((product) => (
-            <div
+            <Link
+              href={`/product/${product.id}`}
               key={product.id}
               className='bg-white rounded-lg overflow-hidden'
             >
               <div className='relative'>
-                <img
+                <Image
+                  width={500}
+                  height={300}
                   src={product.image}
                   alt={product.name}
                   className='w-full h-[300px] object-cover'
@@ -115,7 +120,7 @@ export default function BigDealSection() {
                   Add to Cart
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

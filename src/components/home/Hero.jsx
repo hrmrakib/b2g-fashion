@@ -1,8 +1,12 @@
+import Image from "next/image";
+
 const Hero = () => {
   return (
     <div className='min-h-screen bg-gray-100 '>
       <section className='relative h-[calc(100vh-80px)] bg-gray-900 text-white'>
-        <img
+        <Image
+          width={2200}
+          height={750}
           src='/assets/hero.png'
           alt='Fashion model'
           className='w-full h-full object-cover'

@@ -1,15 +1,23 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
-const NavItem = ({ children }) => (
-  <li className='mx-4 cursor-pointer hover:text-purple-500'>{children}</li>
+const NavItem = ({ children, className }) => (
+  <li
+    className={`mx-4 cursor-pointer text-[#646464] hover:text-purple-500 ${className}`}
+  >
+    {children}
+  </li>
 );
 
-const IconButton = ({ children, className }) => (
-  <button className={`ml-4 text-gray-700 hover:text-purple-500 ${className}`}>
+const IconButton = ({ children, className, href }) => (
+  <Link
+    href={href || "#"}
+    className={`ml-4 text-gray-700 hover:text-purple-500 ${className}`}
+  >
     {children}
-  </button>
+  </Link>
 );
 
 const Navbar = () => {
@@ -18,18 +26,20 @@ const Navbar = () => {
   return (
     <header className='bg-[#F5F3FF] shadow-md'>
       <nav className='max-w-7xl mx-auto px-4 py-4 flex items-center justify-between'>
-        <div className='flex items-center'>
+        <Link href={"/"} className='flex items-center'>
           <img src='/assets/logo.png' alt='We5ive Logo' className='' />
           <p className='ml-2 text-xl font-bold text-gray-800'>
             We<span className='text-purple-600'>5</span>ive
           </p>
-        </div>
+        </Link>
 
         <ul className='hidden md:flex'>
-          <NavItem>Home</NavItem>
-          <NavItem>Shop</NavItem>
-          <NavItem>Deals</NavItem>
-          <NavItem>What's New</NavItem>
+          <NavItem href={"/"} className={"text-[#581FC1]"}>
+            Home
+          </NavItem>
+          <NavItem href='/'>Shop</NavItem>
+          <NavItem href='/'>Deals</NavItem>
+          <NavItem href='/'>What's New</NavItem>
         </ul>
 
         <div className='flex items-center'>
@@ -44,6 +54,7 @@ const Navbar = () => {
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 viewBox='0 0 24 24'
+                color='#1E1E1E'
                 width={"20"}
                 height={"20"}
                 fill='none'

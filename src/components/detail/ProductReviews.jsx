@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ProductReviews() {
@@ -105,7 +106,9 @@ export default function ProductReviews() {
             {reviews.map((review) => (
               <div key={review.id} className='flex space-x-4'>
                 <div className='flex-shrink-0'>
-                  <img
+                  <Image
+                    width={10}
+                    height={10}
                     className='h-10 w-10 rounded-full'
                     src={review.avatar}
                     alt={`${review.author}'s avatar`}

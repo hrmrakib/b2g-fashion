@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
+
 const PromotionalBanner = () => {
   return (
-    <section className='bg-[#F8F5FF] py-12 px-4 md:px-8'>
+    <section className='py-12 px-4 md:px-8'>
       <div className='max-w-7xl mx-auto'>
         <div className='flex flex-col md:flex-row items-center justify-between'>
           <div className='space-y-4 md:w-1/2 text-center md:text-left mb-8 md:mb-0'>
@@ -33,7 +35,9 @@ const PromotionalBanner = () => {
           </div>
 
           <div className='md:w-1/2'>
-            <img
+            <Image
+              width={500}
+              height={450}
               src='/assets/big-deal.png'
               alt='Happy couple wearing sunglasses and fashionable clothing'
               className='w-full h-[450px] object-fill rounded-lg'

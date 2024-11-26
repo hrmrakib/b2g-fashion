@@ -1,10 +1,14 @@
+import Image from "next/image";
+
 const CollectionBanner = () => {
   return (
-    <section className='bg-[#F8F5FF] py-12 px-4 md:px-8'>
+    <section className='py-12 px-4 md:px-8'>
       <div className='max-w-7xl mx-auto'>
         <div className='h-[566px] flex flex-col md:flex-row items-center justify-between gap-8'>
-          <div className='md:w-1/2'>
-            <img
+          <div className='md:w-1/2 bg-[#EEECFB]'>
+            <Image
+              width={500}
+              height={500}
               src='/assets/man-collection.png'
               alt='Man wearing blue denim shirt and sunglasses'
               className='w-full max-h-[566px] rounded-lg'
@@ -36,19 +40,19 @@ const CollectionBanner = () => {
                 </svg>
               </button>
             </div>
-
-            <div className='flex justify-center md:justify-start gap-2 pt-4'>
-              {[0, 1, 2].map((index) => (
-                <button
-                  key={index}
-                  className={`w-8 h-2 rounded-full ${
-                    index === 0 ? "bg-purple-600" : "bg-purple-200"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
+        </div>
+
+        <div className='flex justify-center md:justify-center gap-2 mt-8'>
+          {[0, 1, 2].map((index) => (
+            <button
+              key={index}
+              className={`w-8 h-2 rounded-full ${
+                index === 0 ? "bg-purple-600" : "bg-purple-200"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

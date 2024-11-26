@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 export default function ProductDetail() {
@@ -27,18 +28,20 @@ export default function ProductDetail() {
   };
 
   return (
-    <div className='min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8'>
+    <div className='min-h-screen py-12 px-4 sm:px-6 lg:px-8'>
       <div className='mx-auto max-w-7xl'>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
           {/* Image Section */}
           <div className='relative'>
             <div className='relative h-[600px] w-full overflow-hidden rounded-lg'>
-              <img
+              <Image
+                width={600}
+                height={600}
                 src={images[currentImage]}
                 alt='Product image'
                 // fill
                 className='object-cover h-[520px]'
-                // priority
+                priority
               />
               <button
                 onClick={previousImage}
@@ -88,7 +91,9 @@ export default function ProductDetail() {
                       : "ring-1 ring-gray-200"
                   }`}
                 >
-                  <img
+                  <Image
+                    width={100}
+                    height={100}
                     src={img}
                     alt={`Product thumbnail ${index + 1}`}
                     // fill
@@ -106,7 +111,7 @@ export default function ProductDetail() {
                 New Arrival
               </span>
             </div>
-            <h1 className='mb-2 text-3xl font-bold'>White Hoodie</h1>
+            <h1 className='mb-2 text-3xl text-black font-bold'>White Hoodie</h1>
             <div className='mb-4 flex items-center'>
               <div className='flex'>
                 {[...Array(5)].map((_, index) => (
@@ -125,12 +130,14 @@ export default function ProductDetail() {
               <span className='ml-2 text-sm text-gray-600'>(4.0)</span>
               <span className='ml-2 text-sm text-purple-600'>121 reviews</span>
             </div>
-            <p className='mb-6 text-2xl font-bold'>BDT 2500</p>
+            <p className='mb-6 text-2xl text-black font-bold'>BDT 2500</p>
 
             <div className='border-y-2 border-dashed py-5 flex items-center justify-between'>
               {/* Size Selection */}
               <div className='mb-6'>
-                <h2 className='mb-2 text-sm font-medium'>Available Size</h2>
+                <h2 className='mb-2 text-sm text-[#1D1D1D] font-medium'>
+                  Available Size
+                </h2>
                 <div className='flex gap-4'>
                   {sizes.map((size) => (
                     <button
@@ -150,7 +157,9 @@ export default function ProductDetail() {
 
               {/* Color Selection */}
               <div className='mb-6'>
-                <h2 className='mb-2 text-sm font-medium'>Available Color</h2>
+                <h2 className='mb-2 text-sm text-[#1D1D1D] font-medium'>
+                  Available Color
+                </h2>
                 <div className='flex gap-4'>
                   {colors.map((color) => (
                     <button
@@ -175,7 +184,9 @@ export default function ProductDetail() {
             </div>
             {/* Quantity Selection */}
             <div className='mb-6 mt-8'>
-              <h2 className='mb-2 text-sm font-medium'>Quantity</h2>
+              <h2 className='mb-2 text-sm text-[#1D1D1D] font-medium'>
+                Quantity
+              </h2>
               <div className='flex items-center'>
                 <button
                   onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -189,7 +200,7 @@ export default function ProductDetail() {
                   onChange={(e) =>
                     setQuantity(Math.max(1, parseInt(e.target.value) || 1))
                   }
-                  className='w-14 border border-gray-300 px-2 py-2 text-center text-lg'
+                  className='w-14 border text-[#1D1D1D] border-gray-300 px-2 py-2 text-center text-lg'
                 />
                 <button
                   onClick={() => setQuantity((q) => q + 1)}

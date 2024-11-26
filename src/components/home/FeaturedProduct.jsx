@@ -1,6 +1,8 @@
 "use client";
 
 import { newArrivals } from "@/constants";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const FeaturedProduct = () => {
@@ -19,7 +21,7 @@ const FeaturedProduct = () => {
   };
 
   return (
-    <section className='py-12 px-4 md:px-8 bg-gray-50'>
+    <section className='py-12 px-4 md:px-8'>
       <div className='max-w-7xl mx-auto'>
         <div className='flex justify-between items-center mb-8'>
           <div>
@@ -72,12 +74,15 @@ const FeaturedProduct = () => {
 
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'>
           {newArrivals.slice(currentIndex, currentIndex + 4).map((product) => (
-            <div
+            <Link
+              href={`/product/${product.id}`}
               key={product.id}
               className='bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow'
             >
               <div className='relative'>
-                <img
+                <Image
+                  width={500}
+                  height={288}
                   src={product.image}
                   alt={product.name}
                   className='object-fill w-full h-[288px]'
@@ -97,7 +102,7 @@ const FeaturedProduct = () => {
                   Add to Cart
                 </button>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

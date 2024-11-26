@@ -2,48 +2,10 @@
 
 import { useState } from "react";
 import { newArrivals } from "../../constants";
+import Image from "next/image";
 
 const RelatedProducts = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const products = [
-    {
-      id: 1,
-      name: "Indian Sharee",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-    {
-      id: 2,
-      name: "Hoodie",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-    {
-      id: 3,
-      name: "Plazu",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-    {
-      id: 4,
-      name: "Jacket",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-    {
-      id: 5,
-      name: "Panjabi",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-    {
-      id: 6,
-      name: "T-Shirt",
-      price: 2300,
-      image: "/t-shirt.png",
-    },
-  ];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -58,7 +20,7 @@ const RelatedProducts = () => {
   };
 
   return (
-    <section className='py-12 px-4 md:px-8 bg-gray-50'>
+    <section className='py-12 px-4 md:px-8'>
       <div className='max-w-7xl mx-auto'>
         <div className='flex justify-between items-center mb-8'>
           <div>
@@ -115,7 +77,9 @@ const RelatedProducts = () => {
               className='bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow'
             >
               <div className='relative'>
-                <img
+                <Image
+                  width={250}
+                  height={250}
                   src={product.image}
                   alt={product.name}
                   className='object-fill w-full h-[288px]'
